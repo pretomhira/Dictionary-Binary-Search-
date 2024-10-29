@@ -1,13 +1,7 @@
 "use client";
 import { useState } from "react";
+import DictionaryList from "./dictionaryList";
 
-const dictionary = [
-  { word: "apple", definition: "A fruit that is sweet and crisp." },
-  { word: "banana", definition: "A long yellow fruit." },
-  { word: "cat", definition: "A small domesticated carnivorous mammal." },
-  { word: "dog", definition: "A domesticated carnivorous mammal." },
-  { word: "elephant", definition: "A large mammal with a trunk." },
-];
 // Binary search function
 function binarySearch(word) {
   let left = 0;
@@ -45,16 +39,19 @@ export default function Home() {
   };
 
   return (
-    <div className="App">
-      <h1>Dictionary Lookup</h1>
-      <input
-        type="text"
-        value={input}
-        onChange={handleInputChange}
-        placeholder="Enter a word"
-      />
-      <button onClick={handleSearch}>Search</button>
-      <p>{result}</p>
+    <div className="columns-2">
+      <div>
+        <h1>Dictionary Lookup</h1>
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Enter a word"
+        />
+        <button onClick={handleSearch}>Search</button>
+        <p>{result}</p>
+      </div>
+      <DictionaryList />
     </div>
   );
 }
