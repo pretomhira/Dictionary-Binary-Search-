@@ -20,9 +20,11 @@ export default function Home() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-5 flex flex-row  gap-5 border border-black rounded-md mt-5">
+    <div className="max-w-3xl mx-auto p-5 flex flex-row  gap-5 bg-orange-300 rounded-md mt-10 shadow-md">
       <div className="flex flex-col gap-3">
-        <div className="text-xl">Dictionary Lookup</div>
+        <div className="text-xl font-bold bg-orange-400 px-2 rounded-md w-fit">
+          Dictionary Lookup
+        </div>
         <div className="flex flex-row gap-3">
           <input
             className="border border-black rounded-sm px-1"
@@ -37,7 +39,9 @@ export default function Home() {
             Search
           </button>
         </div>
-        <p>{result}</p>
+        <p className="text-xl font-serif font-thin p-2 bg-orange-200 h-32">
+          {result}
+        </p>
       </div>
       <DictionaryList />
     </div>

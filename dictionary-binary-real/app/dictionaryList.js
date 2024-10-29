@@ -14,15 +14,24 @@ const DictionaryList = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <h2>Dictionary</h2>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        {dictionary.map((entry, index) => (
-          <li key={index} style={{ margin: "10px 0" }}>
-            <strong>{entry.word}</strong>: {entry.definition}
-          </li>
-        ))}
-      </ul>
+    <div className="w-96 h-96 overflow-scroll border border-black rounded-md p-5">
+      <div>
+        <h2 className="text-xl font-semibold absolute bg-orange-400 px-2 rounded-md">
+          Words
+        </h2>
+      </div>
+      <div className="pt-10">
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          {dictionary.map((entry, index) => (
+            <li key={index} className="flex flex-col">
+              <div className="font-semibold">{entry.word}</div>
+              <div className="text-sm font-thin font-serif">
+                {entry.definition}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
