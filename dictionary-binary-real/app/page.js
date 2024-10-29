@@ -1,27 +1,8 @@
 "use client";
 import { useState } from "react";
+import { binarySearch } from "./binarySearch";
 import DictionaryList from "./dictionaryList";
 
-// Binary search function
-function binarySearch(word) {
-  let left = 0;
-  let right = dictionary.length - 1;
-
-  while (left <= right) {
-    let mid = Math.floor((left + right) / 2);
-    let midWord = dictionary[mid].word;
-
-    if (midWord === word) {
-      return dictionary[mid].definition; // Word found
-    } else if (midWord < word) {
-      left = mid + 1; // Search right half
-    } else {
-      right = mid - 1; // Search left half
-    }
-  }
-
-  return "Word not found in dictionary."; // Not found
-}
 export default function Home() {
   const [input, setInput] = useState(""); // User input
   const [result, setResult] = useState(""); // Search result
@@ -39,16 +20,23 @@ export default function Home() {
   };
 
   return (
-    <div className="columns-2">
-      <div>
-        <h1>Dictionary Lookup</h1>
-        <input
-          type="text"
-          value={input}
-          onChange={handleInputChange}
-          placeholder="Enter a word"
-        />
-        <button onClick={handleSearch}>Search</button>
+    <div className="max-w-3xl mx-auto p-5 flex flex-row  gap-5 border border-black rounded-md mt-5">
+      <div className="flex flex-col gap-3">
+        <div className="text-xl">Dictionary Lookup</div>
+        <div className="flex flex-row gap-3">
+          <input
+            className="border border-black rounded-sm px-1"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Enter a word"
+          />
+          <button
+            className="border border-black rounded-sm bg-gray-300 px-1"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+        </div>
         <p>{result}</p>
       </div>
       <DictionaryList />
