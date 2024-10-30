@@ -50,7 +50,7 @@ Binary search has a time complexity of \( O(\log n) \), making it a very efficie
 
 ## Screenshots
 
-![App Screenshot](path-to-screenshot.png)
+![App Screenshot](./dictionary-binary-real/path-to-screenshot.png)
 
 ## License
 
