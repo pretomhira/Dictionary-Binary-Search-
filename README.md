@@ -4,7 +4,7 @@ Here's a sample README file for your GitHub project.
 
 # Simple Dictionary App
 
-This is a simple dictionary application built with React.js. The app provides a basic search functionality that uses a **binary search algorithm** to look up definitions for words. This project uses a small set of dummy data stored in `data.js` and only utilizes React for the frontend and binary search for efficient word searching.
+This is a simple dictionary application built with React.js. live link - https://dictionary-binary-search.vercel.app/ The app provides a basic search functionality that uses a **binary search algorithm** to look up definitions for words. This project uses a small set of dummy data stored in `data.js` and only utilizes React for the frontend and binary search for efficient word searching.
 
 ## Project Features
 
